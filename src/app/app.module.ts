@@ -8,6 +8,10 @@ import { CoinListComponent } from './component/coin/coin-list/coin-list.componen
 import { AddCoinComponent } from './component/coin/add-coin/add-coin.component';
 import { MarketListComponent } from './component/market/market-list/market-list.component';
 import { AddMarketComponent } from './component/market/add-market/add-market.component';
+import { HttpClientModule }    from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { MarketPipe } from './core/pipe/market.pipe';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +19,15 @@ import { AddMarketComponent } from './component/market/add-market/add-market.com
     CoinListComponent,
     AddCoinComponent,
     MarketListComponent,
-    AddMarketComponent
+    AddMarketComponent,
+    MarketPipe
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
